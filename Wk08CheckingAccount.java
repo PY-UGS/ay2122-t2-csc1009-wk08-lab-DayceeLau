@@ -15,9 +15,12 @@ public class Wk08CheckingAccount
         this.balance = balance;
     }
 
-    public void deposit(double deposit)
+    public void deposit(double deposit) throws Wk08InsufficientFundsException
     {
         if( deposit>=0 )  this.balance += deposit;
+        if(deposit <= 0){
+            throw new Wk08InsufficientFundsException("No deposit of negative numbers or 0.");
+        }
     }
 
     public void withdraw(double withdrawal) throws Wk08InsufficientFundsException

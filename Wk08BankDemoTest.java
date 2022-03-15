@@ -24,9 +24,12 @@ public class Wk08BankDemoTest
         }
         catch(Exception e)
         {
-            //d. If $yy > $xx, print the user-defined exception and short amount “Sorry, but your account is short by: $""
             System.out.println(e);
-            System.out.println("Sorry, but your account is short by: $" + String.format("%.2f", withdrawal - Acccount.getBalance()));
+            if(withdrawal>=0 && withdrawal> Acccount.getBalance()){
+                System.out.println("Sorry, but your account is short by: $" + String.format("%.2f", withdrawal - Acccount.getBalance()));
+            }
+            //d. If $yy > $xx, print the user-defined exception and short amount “Sorry, but your account is short by: $""
+           
         }
     }
 }
