@@ -1,18 +1,18 @@
 import java.io.*;
 
-public class Wk08InsufficientFundsException extends Exception{
+public class InsufficientFundsException extends Exception{
     private double amount;
     private String error;
 
 
-    public Wk08InsufficientFundsException(double amount){
+    public InsufficientFundsException(double amount){
         this.amount = amount;
     }
     public double getAmount(){
         return amount;
     }
 
-    Wk08InsufficientFundsException(String error){
+    InsufficientFundsException(String error){
         this.error = error;
     }
     @Override
