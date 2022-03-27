@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 import javax.lang.model.util.ElementScanner14;
 
-public class Wk08CircleWithException {
+public class CircleWithException {
     private double radius;
     private static double maxArea = 1000;
 
-    public Wk08CircleWithException(double radius) throws Exception{
+    public CircleWithException(double radius) throws Exception{
         this.radius = radius;
         if(radius<=0){
             throw new IllegalArgumentException("Das illegal, negative or 0 not allowed.");
-        }else if(radius>Wk08CircleWithException.maxArea){
+        }else if(radius>CircleWithException.maxArea){
             throw new Exception("Radius too big, can't pick a radius more than 1000");
         }
     }
@@ -20,7 +20,7 @@ public class Wk08CircleWithException {
         this.radius = radius;
         if(radius<=0){
             throw new IllegalArgumentException("Das illegal, negative radius not allowed.");
-        }else if(radius>Wk08CircleWithException.maxArea){
+        }else if(radius>CircleWithException.maxArea){
             throw new Exception("Radius too big, can't pick a radius more than 1000");
         }
     }
@@ -42,10 +42,10 @@ public class Wk08CircleWithException {
     public static void main(String[] args) {
         try{
             Scanner scan = new Scanner(System.in);
-            Wk08CircleWithException Circle = null;
+            CircleWithException Circle = null;
             System.out.print("Radius of circle: ");
             double radius = scan.nextDouble();
-            Circle = new Wk08CircleWithException(radius);
+            Circle = new CircleWithException(radius);
             System.out.println("Area of circle: " + Circle.getArea());
             System.out.println("Diameter of circle: " + Circle.getDiameter());
 
